@@ -7,6 +7,10 @@ console:
     io.rancher.os.after: network
     io.docker.compose.rebuild: "false"
     io.rancher.os.console: ubuntu
+  volumes:
+  - /usr/bin/iptables:/sbin/iptables:ro
+  - /media:/media:shared
+  - /mnt:/mnt:shared
   volumes_from:
   - all-volumes
   restart: always
